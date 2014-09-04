@@ -20,11 +20,15 @@ class Account
         balance = row[:balance]
       end
     end
-    balance
+    balance.to_f
   end
 
   def current_balance
-
+    balance = starting_balance
+    transactions.each do |transaction|
+      balance += transaction.amount
+    end
+    balance
   end
 
   def transactions
@@ -38,7 +42,11 @@ class Account
   end
 
   def summary
-
+    summaries = []
+    transactions.each do |transaction|
+      summaries << transaction.summary
+    end
+    summaries
   end
 
 end
