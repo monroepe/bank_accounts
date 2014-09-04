@@ -1,0 +1,23 @@
+<h1><%= account.name%></h1>
+
+<table>
+  <tr>
+    <th>Account</th>
+    <th>Starting Balance</th>
+    <th>Current Balance</th>
+  </tr>
+  <tr>
+    <td><%= account.name %></a></td>
+    <td>$<%= account.starting_balance %></td>
+    <td>$<%= account.current_balance %></td>
+  </tr>
+</table>
+
+<h3>Transaction History</h3>
+  <% account.summary.each do |transaction|%>
+  <p><%= transaction %>
+  <%end%>
+
+
+<br><br>
+<a href="/accounts" class = "back_button">Back to Accounts</a>
