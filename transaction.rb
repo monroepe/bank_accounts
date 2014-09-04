@@ -2,22 +2,33 @@ require 'pry'
 
 class Transaction
 
-  attr_reader :type, :date, :amount, :source
+  attr_reader :date, :amount, :description
 
-  def initialize(amount, date, type, source)
+  def initialize(amount, date, description)
     @amount = amount.to_f
     @date = date
-    @type = type
-    @source = source
+    @description = description
   end
 
   def deposit?
-    type.downcase == 'deposit'
+    amount > 0
+  end
+
+  def type
+    if deposit?
+      "DEPOSIT"
+    else
+      "WITHDRAWAL"
+    end
   end
 
   def summary
-    "$#{amount}  #{type.upcase}  #{date} - #{source}"
+    "$#{amount}  #{type}  #{date} - #{description}"
   end
 
 end
+
+
+
+
 

@@ -1,5 +1,7 @@
+require_relative 'transaction'
 require 'pry'
 require 'csv'
+
 
 class Account
 
@@ -23,6 +25,13 @@ class Account
 
   def current_balance
 
+  end
+
+  def transactions
+    transactions = []
+    CSV.foreach(balance_data, headers: true, header_converters: :symbol) do |row|
+      if row[:account] == name
+        transactions = Trans
   end
 
   def summary
