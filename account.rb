@@ -29,9 +29,12 @@ class Account
 
   def transactions
     transactions = []
-    CSV.foreach(balance_data, headers: true, header_converters: :symbol) do |row|
+    CSV.foreach(transactions_data, headers: true, header_converters: :symbol) do |row|
       if row[:account] == name
-        transactions = Trans
+        transactions << Transaction.new(row[:amount], row[:date], row[:description])
+      end
+    end
+    transactions
   end
 
   def summary
