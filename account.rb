@@ -51,5 +51,3 @@ class Account
 
 end
 
-acct = Account.new("Business Checking", 'balances.csv', 'bank_data.csv')
-binding.pry

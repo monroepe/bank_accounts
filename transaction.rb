@@ -23,7 +23,7 @@ class Transaction
   end
 
   def summary
-    "$#{amount.abs}  #{type}  #{date} - #{description}"
+    "$#{amount.abs}     #{type}  #{date} - #{description}"
   end
 
 end
