@@ -8,14 +8,14 @@
   </tr>
   <tr>
     <td><%= account.name %></a></td>
-    <td>$<%= account.starting_balance %></td>
-    <td>$<%= account.current_balance %></td>
+    <td>$<%= sprintf('%.2f', account.starting_balance) %></td>
+    <td>$<%= sprintf('%.2f', account.current_balance)%></td>
   </tr>
 </table>
 
 <h3>Transaction History</h3>
   <% account.summary.each do |transaction|%>
-  <p><%= transaction %>
+  <p><%= transaction %></p>
   <%end%>
 
 

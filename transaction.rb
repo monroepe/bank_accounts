@@ -11,7 +11,7 @@ class Transaction
   end
 
   def deposit?
-    amount > 0
+    amount > 0.0
   end
 
   def type

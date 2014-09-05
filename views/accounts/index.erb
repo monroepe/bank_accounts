@@ -10,8 +10,8 @@
   <% accounts.each do |account| %>
   <tr>
     <td><a href="/accounts/<%=account.name%>"><%= account.name %></a></td>
-    <td>$<%= account.starting_balance %></td>
-    <td>$<%= account.current_balance %></td>
+    <td>$<%= sprintf('%.2f', account.starting_balance) %></td>
+    <td>$<%= sprintf('%.2f', account.current_balance) %></td>
   </tr>
   <%end%>
 </table>

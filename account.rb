@@ -14,7 +14,7 @@ class Account
   end
 
   def starting_balance
-    balance = 0
+    balance = 0.0
     CSV.foreach(balance_data, headers: true, header_converters: :symbol) do |row|
       if row[:account] == name
         balance = row[:balance]
